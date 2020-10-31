@@ -1,10 +1,12 @@
+package ui.pages;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class MainPage {
-    public WebDriver driver;
+    private WebDriver driver;
 
     public MainPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -12,13 +14,13 @@ public class MainPage {
 
     }
     @FindBy(xpath = "//p[contains(text(),'Shady')]")
-    WebElement dropDown;
+    private WebElement elDropDown;
 
     @FindBy(xpath = "//b[contains(text(),'Shady Lovers')]")
-    WebElement profile;
+    private WebElement elProfile;
 
     public void goToProfilePage() {
-        dropDown.click();
-        profile.click();
+        elDropDown.click();
+        elProfile.click();
     }
 }
