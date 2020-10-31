@@ -6,6 +6,8 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
 
     public WebDriver driver;
+    private String login = "ollynnommapp-6141@yopmail.com";
+    private String password = "121232asd";
 
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -19,22 +21,17 @@ public class LoginPage {
     WebElement emailInput;
 
     @FindBy(xpath = "//input[contains(@class,'js-psw-input')]")
-     WebElement passwordInput;
+    WebElement passwordInput;
 
     @FindBy(xpath = "//button[contains(text(),'Войти')]")
-     WebElement confirmButton;
+    WebElement confirmButton;
 
-    public void inputLogin () {
-        emailInput.sendKeys("effesenull-2742@yopmail.com");
-    }
-
-    public void inputPassword () {
-        passwordInput.sendKeys(("121232asd"));
-    }
-
-    public void clickLoginBtn () {
+    public void logIn() {
         loginButton.click();
-    }
+        emailInput.sendKeys(login);
+        passwordInput.sendKeys(password);
+        confirmButton.click();
 
-    public void clickConfirmBnt () { confirmButton.click();}
+    }
 }
+
