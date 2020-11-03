@@ -20,7 +20,15 @@ public class MainPage {
     private WebElement elProfile;
 
     public void goToProfilePage() {
-        elDropDown.click();
+        clickOnDropDownProfileMenu();
+        clickOnProfileInfo();
+
+    }
+
+    public void clickOnProfileInfo(){
         elProfile.click();
+    }
+    public void clickOnDropDownProfileMenu(){
+        elDropDown.click();
     }
 }

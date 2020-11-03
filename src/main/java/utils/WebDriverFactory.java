@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class WebDriverFactory {
+
     public static WebDriver createDriver(WebDriverType wdType) {
         switch (wdType) {
             case CHROME:
@@ -15,7 +16,7 @@ public class WebDriverFactory {
                 WebDriverManager.firefoxdriver().setup();
                 return new FirefoxDriver();
             default:
-                return null;
+                throw new IllegalArgumentException("Wrong webdriver type");
         }
     }
 

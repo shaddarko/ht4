@@ -38,18 +38,17 @@ public class LoginPage {
     public void inputUserPassword (String userPassword) {
         elPasswordInput.sendKeys(userPassword);
     }
-    public void clickOnLoginButton() {
-        elLoginButton.click();
-    }
+    public void clickOnLoginButton() { elLoginButton.click(); }
     public void clickOnConfirmButton()  {
         elConfirmButton.click();
     }
-    public void userLogIn(String userLogin, String userPassword) {
-        elLoginButton.click();
-        elPasswordInput.sendKeys(userPassword);
-        elEmailInput.sendKeys(userLogin);
-        elConfirmButton.click();
 
+    public void inputData (String userLogin, String userPassword) {
+        clickOnLoginButton();
+        inputUserLogin(userLogin);
+        inputUserPassword(userPassword);
+        clickOnConfirmButton();
     }
+
 }
 

@@ -44,17 +44,27 @@ public class ProfilePage {
 
 
     public void inputUsersDataInPersonalInfo(String userName, String userLastName) {
+      inputProfileUserName(userName);
+      inputProfileUserLastName(userLastName);
+      clickOnSaveButton();
+    }
+
+    public void inputProfileUserName(String userName) {
         elInputName.sendKeys(userName);
-        elInputLname.sendKeys(userLastName);
+    }
+    public void inputProfileUserLastName(String userLastName) { elInputLname.sendKeys(userLastName); }
+
+    public void clickOnSaveButton() {
         elSaveButton.click();
     }
 
     public void checkPresenceOfUsersData() {
-        Assert.assertTrue(elFilledLname.isDisplayed(), "Element is not visible");
-        Assert.assertTrue(elFilledName.isDisplayed(), "Element is not visible");
+        Assert.assertTrue(elFilledLname.isDisplayed(), "Element FilledLName is not visible");
+        Assert.assertTrue(elFilledName.isDisplayed(), "Element FilledName is not visible");
 
     }
 }
+
 
 
 
